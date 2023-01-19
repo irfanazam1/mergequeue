@@ -1,4 +1,4 @@
-### Merge Queue Demo
+# Merge Queue Demo
 
 ## Merge Queue
 
@@ -14,7 +14,7 @@ Keeps the main/base branch green.
 
 ## Why Queues?
 
-Situation:
+### Situation:
 - The base branch (e.g., main) has its CI testing passing correctly.
 - A PR is created, which also passes the CI.
 
@@ -53,16 +53,16 @@ Merge queue will make sure the pull request #2 is updated with the latest tip of
 ## Strict Merge
 That way, there's no way to merge a broken pull request into the base branch when using merge queues.
 
-## github Merge Queue Implementations
+## Github Merge Queue Implementations
 - Bors tech merge queue bot (https://bors.tech/)
 - Github merge queue (https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue)
 - Mergify (https://docs.mergify.com/actions/queue/)
 
-### Demo
+## Demo
 The demo uses a mergify queue. Mergify is a paid github bot/app for enterprise but free for invidual/personal use.
 - Installation: https://docs.mergify.com/getting-started/#installation
   - You create a personal account on www.mergify.com
-  - Link your account with mergigy by accepting the github app consent while adding mergify as an app.
+  - Link your account with mergify by accepting the github app consent while adding mergify as an app.
   - You either give permissions to all the repos or select specific ones.
   - Mergigy requires permissions to create temporary branches, create commits, push to branches, delete branches etc.
 
@@ -78,18 +78,10 @@ Each rule is composed of 3 elements:
 - A list of conditions. Each conditions must match for the rule to be applied.
 - A list of actions. Each action will be applied as soon as the pull request matches the conditions.
 
-A simple merge queue rule
-pull_request_rules:
-  - name: Automatic merge on approval 
-    conditions:
-      - "#approved-reviews-by>=1"
-    actions:
-      merge:
-        method: merge
-        
 # Queue Rules
 The rules used for this demo
- queue_rules:
+```
+queue_rules:
    - name: default
      conditions:
        - check-success='SDK Tests'
@@ -105,7 +97,4 @@ The rules used for this demo
      actions:
        queue:
          name: default
-  
-
-
-
+```
