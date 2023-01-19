@@ -79,6 +79,7 @@ Each rule is composed of 3 elements:
 - A list of actions. Each action will be applied as soon as the pull request matches the conditions.
 
 A simple merge queue rule
+```
 pull_request_rules:
   - name: Automatic merge on approval 
     conditions:
@@ -86,10 +87,12 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-        
+```
+
 # Queue Rules
 The rules used for this demo
- queue_rules:
+```
+queue_rules:
    - name: default
      conditions:
        - check-success='SDK Tests'
@@ -105,4 +108,4 @@ The rules used for this demo
      actions:
        queue:
          name: default
-
+```
