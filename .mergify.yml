@@ -1,0 +1,16 @@
+queue_rules:
+  - name: default
+    conditions:
+      - check-success='SDK Tests'
+      - check-success='Benchmarks'
+      - check-success='SmokeTests'
+      - check-success='Docker Image'
+
+pull_request_rules:
+  - name: merge using the merge queue
+    conditions:
+      - base=main
+      - approved-reviews-by>=1
+    actions:
+      queue:
+        name: default
