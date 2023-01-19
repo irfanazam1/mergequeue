@@ -78,17 +78,6 @@ Each rule is composed of 3 elements:
 - A list of conditions. Each conditions must match for the rule to be applied.
 - A list of actions. Each action will be applied as soon as the pull request matches the conditions.
 
-A simple merge queue rule
-```
-pull_request_rules:
-  - name: Automatic merge on approval 
-    conditions:
-      - "#approved-reviews-by>=1"
-    actions:
-      merge:
-        method: merge
-```
-
 # Queue Rules
 The rules used for this demo
 ```
