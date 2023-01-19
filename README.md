@@ -62,7 +62,7 @@ That way, there's no way to merge a broken pull request into the base branch whe
 The demo uses a mergify queue. Mergify is a paid github bot/app for enterprise but free for invidual/personal use.
 - Installation: https://docs.mergify.com/getting-started/#installation
   - You create a personal account on www.mergify.com
-  - Link your account with mergigy by accepting the github app consent while adding mergify as an app.
+  - Link your account with mergify by accepting the github app consent while adding mergify as an app.
   - You either give permissions to all the repos or select specific ones.
   - Mergigy requires permissions to create temporary branches, create commits, push to branches, delete branches etc.
 
