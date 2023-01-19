@@ -1,4 +1,4 @@
-### Merge Queue Demo
+# Merge Queue Demo
 
 ## Merge Queue
 
@@ -14,7 +14,7 @@ Keeps the main/base branch green.
 
 ## Why Queues?
 
-Situation:
+### Situation:
 - The base branch (e.g., main) has its CI testing passing correctly.
 - A PR is created, which also passes the CI.
 
@@ -53,12 +53,12 @@ Merge queue will make sure the pull request #2 is updated with the latest tip of
 ## Strict Merge
 That way, there's no way to merge a broken pull request into the base branch when using merge queues.
 
-## github Merge Queue Implementations
+## Github Merge Queue Implementations
 - Bors tech merge queue bot (https://bors.tech/)
 - Github merge queue (https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue)
 - Mergify (https://docs.mergify.com/actions/queue/)
 
-### Demo
+## Demo
 The demo uses a mergify queue. Mergify is a paid github bot/app for enterprise but free for invidual/personal use.
 - Installation: https://docs.mergify.com/getting-started/#installation
   - You create a personal account on www.mergify.com
@@ -105,7 +105,4 @@ The rules used for this demo
      actions:
        queue:
          name: default
-  
-
-
 
